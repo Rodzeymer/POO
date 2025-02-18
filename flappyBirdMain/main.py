@@ -187,12 +187,12 @@ def game_loop():
             gamestarted = False
             GameOverMessage(sprites)
             pygame.time.set_timer(column_create_event, 0)
-            assets.play_audio("hit")
+            assets.play_audio("assets/audio/hit.wav")
 
         for sprite in sprites:
             if isinstance(sprite, Column) and sprite.is_passed():
                 score.value += 1
-                assets.play_audio("point")
+                assets.play_audio("assets/audio/point.wav")
 
         pygame.display.flip()
         clock.tick(configs.FPS)
